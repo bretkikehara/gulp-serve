@@ -54,6 +54,7 @@ module.exports = function (config) {
       config.port = 3000;
     }
 
+    var server;
     var serverInitFunction = function () {
       var addr = server.address();
       var address = addr.address;
@@ -69,9 +70,10 @@ module.exports = function (config) {
         ciphers: config.https.ciphers || 'EDH+CAMELLIA:EDH+aRSA:EECDH+aRSA+AESGCM:EECDH+aRSA+SHA384:EECDH+aRSA+SHA256:EECDH:+CAMELLIA256:+AES256:+CAMELLIA128:+AES128:+SSLv3:!aNULL:!eNULL:!LOW:!3DES:!MD5:!EXP:!PSK:!DSS:!RC4:!SEED:!ECDSA:CAMELLIA256-SHA:AES256-SHA:CAMELLIA128-SHA:AES128-SHA' // Intermediat Ciphers from https://wiki.mozilla.org/Security/Server_Side_TLS
       };
 
-      var server = https.createServer(opts, app).listen(config.port, config.hostname, serverInitFunction);
+      server = https.createServer(opts, app).listen(config.port, config.hostname, serverInitFunction);
     } else {
-      var server = http.createServer(app).listen(config.port, config.hostname, serverInitFunction);
+      server = http.createServer(app).listen(config.port, config.hostname, serverInitFunction);
     }
+    return server;
   };
 };
