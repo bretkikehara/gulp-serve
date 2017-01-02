@@ -1,11 +1,11 @@
 {
-  "name": "gulp-serve",
-  "version": "1.4.0",
+  "name": "@bretkikehara/gulp-serve",
+  "version": "1.4.1",
   "description": "Serve your assets",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/nkt/gulp-serve.git"
+    "url": "git://github.com/bretkikehara/gulp-serve.git"
   },
   "keywords": [
     "gulpfriendly",
@@ -19,6 +19,11 @@
       "name": "Ilya Lakhin",
       "email": "eliah.lakhin@gmail.com",
       "url": "http://lakhin.com/"
+    },
+    {
+      "name": "Bret K. Ikehara",
+      "email": "bret.k.ikehara@gmail.com",
+      "url": "http://www.bikehara.com/"
     }
   ],
   "license": "MIT",
